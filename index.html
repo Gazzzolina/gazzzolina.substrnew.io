@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	
+    <title>Интерфейс для функций</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+<script language="JavaScript" type="text/javascript">	
+	
+	function multi2(){
+		var multi_12, multi_22, multi_32, result2;
+		multi_12 = document.getElementById('inp_12').value;
+		    
+		multi_22 = document.getElementById('inp_22').value;
+
+				
+		multi_32 = document.getElementById('inp_32').value;
+	
+    
+	const substr = (multi_12, multi_22, multi_32) => {
+  multi_12 = multi_12.toString();
+  if (multi_32 < 0) {
+    multi_32 = 1;
+  }
+  if (multi_22 < 0) {
+    multi_22 = 0;
+  }
+  if (multi_32 === 0 || multi_22 > multi_12.length) {
+    return '';
+  }
+  if (multi_22 + multi_32-1 > multi_12.length) {
+    multi_32 = multi_12.length - multi_22;
+  }
+  if (typeof multi_12 === 'string' && typeof multi_22 === 'number' && typeof multi_32 === 'number') {
+    let result2 = '';
+    for (let i = 0; i < multi_32; i += 1) {
+      result2 += multi_12[multi_22 + i];
+    }
+    return result2;
+  }
+  return multi_12;
+}	
+		result = substr(multi_12, multi_22, multi_32);
+		document.getElementById('result_multi2').innerHTML = result;
+	}
+	
+	
+	</script>
+
+  </head>
+  <body>
+	<div class="container">
+   <div class="calc">
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		<h1> Interns / Задание 4 / Жаринова Галина </h1>
+		<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+		
+			<ul>
+				<h2> Меню </h2>
+				<li class="list-item">
+					Является ли строка палиндромом?
+				</li>
+				<li class="list-item">
+					Реализация функции substr
+				</li>
+				<li class="list-item">
+					Конвертер ДНК <-> РНК
+				</li>
+							</ul>
+		</div>
+		<div class="col-md-4">
+		<h2>
+				Реализация функции substr
+			</h2>
+			<p>
+				<div class="form-group">
+                           <label for="inp_12">Введите строку:</label> 
+                           <input type="text" class="form-control" id="inp_12">
+                           <label for="inp_22">Введите начальный индекс:</label> 
+                           <input type="text" class="form-control" id="inp_22">
+						   <label for="inp_32">Введите количество символов подстроки:</label> 
+                           <input type="text" class="form-control" id="inp_32">
+                        </div>
+                           <button onclick="multi2()" class="btn btn-primary">Возвратить подстрорку</button>
+                    
+                    <hr>
+                    
+                     Рeзультат:   <span style="color:#00c403" id="result_multi2"></span>
+			</p>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
